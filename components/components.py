@@ -36,3 +36,7 @@ class WebElement:
 
     def visible(self):
         return self.find_element().is_displayed()
+
+    def send_keys(self, text:str):
+        self.find_element().send_keys(text)
+

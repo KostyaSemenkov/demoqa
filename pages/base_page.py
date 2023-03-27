@@ -6,6 +6,7 @@ class BasePage:
         self.driver = driver
         self.base_url = base_url
 
+
     def visit(self):
         return self.driver.get(self.base_url)
 
