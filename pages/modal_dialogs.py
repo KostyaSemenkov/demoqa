@@ -12,5 +12,5 @@ class ModalDialogs(BasePage):
         'title': 'DEMOQA'
 
         }
-        self.five_paragraph = WebElement(driver, '#item-4 > span')
+        self.five_paragraph = WebElement(driver, 'div:nth-child(1) > div > div > div:nth-child(3) > div > ul >li')
         self.icon = WebElement(driver, '#app > header >a')
