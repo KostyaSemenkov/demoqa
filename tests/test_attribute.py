@@ -8,6 +8,8 @@ def test_attribute_holder(browser):
     assert holder.first_pole.get_dom_attribute('placeholder') == 'Full Name'
 
 
-@allure.feature('check attr')
+@allure.feature('check attr')# название блока тестов
+@allure.story('Проверка отсутствия атрибута') # описание самого теста
+@allure.severity(allure.severity_level.BLOCKER) # серьезность бага
 def test_placeholder(browser):
     pass
