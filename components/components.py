@@ -5,18 +5,19 @@ from selenium.webdriver.common.keys import Keys
 
 class WebElement:
 
-    def __init__(self, driver, locator = ''):
+    def __init__(self, driver, locator = '', locator_type = 'css'):
         self.driver = driver
         self.locator = locator
+        self.locator_type = locator_type
+
+    def find_element(self):
+        return self.driver.find_element(self.get_by_type(), self.locator)
+
+    def find_elements(self):
+        return self.driver.find_elements(self.get_by_type(), self.locator)
 
     def click(self):
         self.find_element().click()
-
-    def find_element(self):
-        return self.driver.find_element(By.CSS_SELECTOR, self.locator)
-
-    def find_elements(self):
-        return self.driver.find_elements(By.CSS_SELECTOR, self.locator)
 
     def check_count_elements(self, count:int):
         if len(self.find_elements()) == count:
@@ -64,3 +65,23 @@ class WebElement:
 
     def find_element_xpath(self): #new
         return self.driver.find_element(By.XPATH, self.locator)
+
+    def get_by_type(self):
+        if self.locator_type == 'id':
+            return By.ID
+        elif self.locator_type == 'name':
+            return By.NAME
+        elif self.locator_type == 'xpath':
+            return By.XPATH
+        elif self.locator_type == 'css':
+            return By.CSS_SELECTOR
+        elif self.locator_type == 'class':
+            return By.CLASS_NAME
+        elif self.locator_type == 'link':
+            return By.LINK_TEXT
+        else:
+            print('locator type' + self.locator_type + 'not correct')
+            return False
+
+    def scroll_to_element(self):
+        self.driver.execute_script('window.scrollTo(0, document.body.scrollHeight);', self.find_element())
