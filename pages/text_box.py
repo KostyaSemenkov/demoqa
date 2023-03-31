@@ -17,4 +17,6 @@ class TextBox(BasePage):
         # self.btn_elements = WebElement(driver, '#app > div > div > div.home-body > div > div:nth-child(1)')
         # self.text_footer = WebElement(driver, '#app > footer > span')
         self.first_pole = WebElement(driver, '#userName')
-
+        self.current_address = WebElement(driver, '#currentAddress')
+        self.btn_submit = WebElement(driver, '#submit')
+        self.bottom_pole = WebElement(driver, '#output > div')

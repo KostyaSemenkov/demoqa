@@ -2,6 +2,7 @@ from pages.base_page import BasePage
 from components.components import WebElement
 
 
+
 class FormPage(BasePage):
 
     def __init__(self, driver):
@@ -20,3 +21,8 @@ class FormPage(BasePage):
         self.btn_submit = WebElement(driver, '#submit')
         self.modal_dialog = WebElement(driver, 'body > div.fade.modal.show > div')
         self.btn_close_modal = WebElement(driver, '#closeLargeModal')
+        self.user_form = WebElement(driver, '#userForm')
+        self.btn_state = WebElement(driver,'#react-select-3-input')
+        self.btn_city = WebElement(driver, '#react-select-4-input')
+        self.btn_list_of_city =WebElement(driver, '#city > div > div.css-1hwfws3 > div.css-1uccc91-singleValue')
+
