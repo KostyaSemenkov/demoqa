@@ -13,3 +13,10 @@ def test_attribute_holder(browser):
 @allure.severity(allure.severity_level.BLOCKER) # серьезность бага
 def test_placeholder(browser):
     pass
+
+
+@allure.feature('check attr')# название блока тестов
+@allure.story('Проверка упавшего теста') # описание самого теста
+@allure.severity(allure.severity_level.BLOCKER) # серьезность бага
+def test_fail(browser):
+    assert 1 == 0

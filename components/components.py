@@ -63,9 +63,6 @@ class WebElement:
     def btn_arrow_down(self): #нажимает стрелочку вниз
         self.find_element().send_keys(Keys.ARROW_DOWN)
 
-    def find_element_xpath(self): #new
-        return self.driver.find_element(By.XPATH, self.locator)
-
     def get_by_type(self):
         if self.locator_type == 'id':
             return By.ID
@@ -85,3 +82,6 @@ class WebElement:
 
     def scroll_to_element(self):
         self.driver.execute_script('window.scrollTo(0, document.body.scrollHeight);', self.find_element())
+
+    def btn_escape(self):
+        self.find_element().send_keys(Keys.ESCAPE)
