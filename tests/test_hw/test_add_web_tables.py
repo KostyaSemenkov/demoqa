@@ -93,3 +93,16 @@ def test_arrows_next_prev(browser):
     assert next_prev_arrows.num_page.get_dom_attribute('value') == '1'
 
 
+@allure.title('Проверка блока No rows found')
+def test_no_row_found(browser):
+    no_row = WebTables(browser)
+    no_row.visit()
+    assert not no_row.btn_tables.exist()
+    while no_row.btn_basket.exist() == True:
+        no_row.btn_basket.click()
+    time.sleep(2)
+    assert no_row.btn_tables.get_text() == 'No rows found'
+
+
+
+

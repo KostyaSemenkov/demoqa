@@ -38,3 +38,5 @@ class WebTables(BasePage):
         self.btn_next = WebElement(driver, ' div.-next > button')
         self.num_page = WebElement(driver, 'span.-pageInfo > div > input[type=number]')
         self.num_of_pages = WebElement(driver, 'span.-pageInfo > span')
+        self.btn_tables = WebElement(driver, 'div.rt-noData') # невидимый обьект, появляется когда нет строчек в таблице
+        self.btn_basket = WebElement(driver, '[title="Delete"]') # неуникальный локатор корзины
