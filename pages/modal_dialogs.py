@@ -14,3 +14,9 @@ class ModalDialogs(BasePage):
         }
         self.five_paragraph = WebElement(driver, 'div:nth-child(1) > div > div > div:nth-child(3) > div > ul >li')
         self.icon = WebElement(driver, '#app > header >a')
+        self.small_modal = WebElement(driver, '#showSmallModal')
+        self.large_modal = WebElement(driver, '#showLargeModal')
+        self.modal_dialog_window = WebElement(driver, 'div.fade.modal.show')
+        self.small_close = WebElement(driver, '#closeSmallModal')
+        self.large_close = WebElement(driver, '#closeLargeModal')
+        self.not_have = WebElement(driver, '#main-message > h1 > span')
