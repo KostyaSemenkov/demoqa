@@ -24,7 +24,7 @@ def test_filling_data(browser):
     filling_data.department.send_keys('QA')
     filling_data.btn_submit.click()
     time.sleep(1)
-    assert filling_data.btn_add.visible()
+    assert not filling_data.reg_form.exist()
     assert filling_data.pole_name.get_text() == 'tester'
     assert filling_data.pole_last_name.get_text() == 'testerov'
     assert filling_data.pole_email.get_text() == 'test@test.tst'
@@ -32,7 +32,7 @@ def test_filling_data(browser):
     assert filling_data.pole_salary.get_text() == '1000'
     assert filling_data.pole_department.get_text() == 'QA'
     filling_data.pensil.click()
-    assert filling_data.btn_add.visible()
+    assert filling_data.reg_form.exist()
     filling_data.first_name.clear()
     filling_data.first_name.send_keys('t')
     filling_data.btn_submit.click()
