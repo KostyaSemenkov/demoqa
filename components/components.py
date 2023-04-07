@@ -88,9 +88,10 @@ class WebElement:
         self.find_element().send_keys(Keys.ESCAPE)
 
     def check_css(self, style, value=''):
-        try:
-            self.driver.execute_script(f"arguments[0].style.{style} ='{value}';", self.find_element())
-        except Exception as ex:
-            logging.log(1, ex)
-            return False
-        return True
+        return self.find_element().value_of_css_property(style) == value
+        # try:
+        #     self.driver.execute_script(f"arguments[0].style.{style} ='{value}';", self.find_element())
+        # except Exception as ex:
+        #     logging.log(1, ex)
+        #     return False
+        # return True
