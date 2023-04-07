@@ -17,3 +17,4 @@ def test_sort_by(browser):
     assert sort_by.column_email.get_dom_attribute('class') == 'rt-th rt-resizable-header -sort-asc -cursor-pointer'
     sort_by.column_department.click()
     assert sort_by.column_department.get_dom_attribute('class') == 'rt-th rt-resizable-header -sort-asc -cursor-pointer'
+
