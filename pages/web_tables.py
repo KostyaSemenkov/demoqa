@@ -40,6 +40,10 @@ class WebTables(BasePage):
         self.num_of_pages = WebElement(driver, 'span.-pageInfo > span')
         self.btn_tables = WebElement(driver, 'div.rt-noData') # невидимый обьект, появляется когда нет строчек в таблице
         self.btn_basket = WebElement(driver, '[title="Delete"]') # неуникальный локатор корзины
-        # div.rt - table > div.rt - thead. - header > div > div локатор столбика неуникальный
-
-
+        self.icon = WebElement(driver, '#app > header >a')
+        self.column_first_name = WebElement(driver, 'div.rt-thead.-header > div > div:nth-child(1)')
+        self.column_last_name = WebElement(driver, 'div.rt-thead.-header > div > div:nth-child(2)')
+        self.column_age = WebElement(driver, 'div.rt-thead.-header > div > div:nth-child(3)')
+        self.column_email = WebElement(driver, 'div.rt-thead.-header > div > div:nth-child(4)')
+        self.column_salary = WebElement(driver, 'div.rt-thead.-header > div > div:nth-child(5)')
+        self.column_department = WebElement(driver, 'div.rt-thead.-header > div > div:nth-child(6)')

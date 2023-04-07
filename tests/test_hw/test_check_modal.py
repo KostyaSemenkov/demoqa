@@ -4,6 +4,7 @@ import pytest
 def test_small_large_modal(browser):
     modal_dial_btns = ModalDialogs(browser)
     modal_dial_btns.visit()
+    assert modal_dial_btns.icon.exist()
     assert modal_dial_btns.small_modal.exist()
     assert modal_dial_btns.large_modal.exist()
     modal_dial_btns.small_modal.click()
